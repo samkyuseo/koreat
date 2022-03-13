@@ -3,10 +3,10 @@ import { NextComponentType } from 'next';
 
 const CallToAction: NextComponentType = () => {
   return (
-    <Center height='500px' flexDir='column' bg='gray.50'>
+    <Center height='400px' flexDir='column'>
       <Flex flexDir='column' textAlign='center' marginBottom='20px'>
         <Heading size='lg' marginBottom='20px'>
-          Starting at only $8.50 per serving
+          Starting at only ~$8.50 per serving
         </Heading>
         <Text color='gray.600' fontWeight='bold'>
           No commitment. Skipping or canceling meals is easy.

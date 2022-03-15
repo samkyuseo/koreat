@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
+import { useRef } from 'react';
 
 import { Box } from '@chakra-ui/react';
 
@@ -10,7 +11,13 @@ import { Footer } from '../components/Footer';
 import { CallToAction } from '../components/CallToAction';
 import { Menu } from '../components/Menu';
 
+import { initFirebase } from '../firebase/initFirebase';
+
+initFirebase();
+
 const Home: NextPage = () => {
+  const howItWorksRef = useRef(null);
+  const menuRef = useRef(null);
   return (
     <Box>
       <Head>

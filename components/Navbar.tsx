@@ -1,7 +1,7 @@
 import { NextComponentType } from 'next';
 import { Flex, Box, Image, Button } from '@chakra-ui/react';
 
-const Navbar: NextComponentType = () => {
+const Navbar: NextComponentType = (props) => {
   return (
     <Flex
       position='fixed'

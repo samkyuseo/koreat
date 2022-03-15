@@ -99,11 +99,12 @@ interface IMenuItemProps {
 function MenuItem(props: IMenuItemProps) {
   return (
     <Box
-      maxW='xs'
+      maxW='md'
       borderWidth='1px'
       bg='white'
       borderRadius='lg'
       overflow='hidden'
+      style={{ gap: '20px' }}
     >
       <Image
         src={props.imageUrl}

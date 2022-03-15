@@ -1,7 +1,8 @@
 import { NextComponentType } from 'next';
 import Image from 'next/image';
 
-import { Flex, Box, Heading, Text, Center } from '@chakra-ui/react';
+import { Flex, Box, Heading, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 const HowItWorks: NextComponentType = () => {
   return (
     <Box paddingY='50px'>

@@ -10,14 +10,7 @@ import { HowItWorks } from '../components/HowItWorks';
 import { Footer } from '../components/Footer';
 import { CallToAction } from '../components/CallToAction';
 import { Menu } from '../components/Menu';
-
-import { initFirebase } from '../firebase/initFirebase';
-
-initFirebase();
-
 const Home: NextPage = () => {
-  const howItWorksRef = useRef(null);
-  const menuRef = useRef(null);
   return (
     <Box>
       <Head>

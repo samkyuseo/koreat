@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import { NextComponentType } from 'next';
-import { Flex, Box, Image, Button } from '@chakra-ui/react';
+import { Flex, Image, Button } from '@chakra-ui/react';
 
 const Navbar: NextComponentType = (props) => {
   return (
@@ -15,13 +16,17 @@ const Navbar: NextComponentType = (props) => {
     >
       <Flex>
         <Flex width='200px' marginY='auto'>
-          <Image src={'/logo.svg'} width='150px' marginLeft='40px' alt='' />
+          <Link href='/' passHref>
+            <Image src={'/logo.svg'} width='150px' marginLeft='40px' alt='' />
+          </Link>
         </Flex>
         <Button variant='navbar-button'>How it works</Button>
         <Button variant='navbar-button'>Menus</Button>
       </Flex>
       <Flex>
-        <Button variant='login-button'>Login</Button>
+        <Button variant='login-button'>
+          <Link href={'/login'}>Login</Link>
+        </Button>
         <Button variant='sign-in-button' marginRight='40px'>
           Sign Up
         </Button>

@@ -13,7 +13,7 @@ import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <Center height='200px' bg='gray.50'>
+    <Center height='200px' bg='white'>
       <Stack spacing={{ base: '4', md: '5' }} marginX='40px'>
         <Stack justify='space-between' direction='row' align='center'>
           <Image src={'/logo.svg'} width='100px' alt='' />

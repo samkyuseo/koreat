@@ -4,7 +4,7 @@ import { Flex, Box, Heading, Text } from '@chakra-ui/react';
 
 const HowItWorks: NextComponentType = () => {
   return (
-    <Box paddingY='50px'>
+    <Box paddingY='50px' bg='gray.50'>
       <Box marginLeft='200px' marginRight='200px'>
         <br />
         <Heading marginBottom='20px'>How it works</Heading>

@@ -3,7 +3,7 @@ import { AiFillStar } from 'react-icons/ai';
 
 const Menu = () => {
   return (
-    <Box bg='gray.50' paddingY='50px'>
+    <Box bg='white' paddingY='50px'>
       <Box marginLeft='200px' marginRight='200px'>
         <br />
         <Box>

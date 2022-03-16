@@ -12,16 +12,21 @@ import {
   Image,
 } from '@chakra-ui/react';
 import { FaBell, FaClipboardCheck, FaRss } from 'react-icons/fa';
-import { AiFillGift } from 'react-icons/ai';
+import { AiFillHeart } from 'react-icons/ai';
 import { BsGearFill } from 'react-icons/bs';
 import { FiMenu, FiSearch } from 'react-icons/fi';
 import { HiCode, HiCollection } from 'react-icons/hi';
-import { MdHome, MdKeyboardArrowRight } from 'react-icons/md';
-import React from 'react';
+import { MdHome, MdKeyboardArrowRight, MdFoodBank } from 'react-icons/md';
+
+import * as React from 'react';
+import { ProductCard } from '../components/ProductCard';
+import { products } from '../data/_data';
+import { ProductGrid } from '../components/ProductGrid';
 
 export default function App() {
   const sidebar = useDisclosure();
   const integrations = useDisclosure();
+  integrations.isOpen = true;
   const color = useColorModeValue('gray.600', 'gray.300');
 
   const NavItem = (props: any) => {
@@ -85,12 +90,11 @@ export default function App() {
         color='gray.600'
         aria-label='Main Navigation'
       >
-        <NavItem icon={MdHome}>Meals</NavItem>
-        <NavItem icon={FaRss}>Past Meals</NavItem>
-        <NavItem icon={HiCollection}>Collections</NavItem>
-        <NavItem icon={FaClipboardCheck}>Checklists</NavItem>
-        <NavItem icon={HiCode} onClick={integrations.onToggle}>
-          Integrations
+        <NavItem icon={MdFoodBank}>Your Next Order</NavItem>
+        <NavItem icon={HiCollection}>Past Orders</NavItem>
+        <NavItem icon={AiFillHeart}>Favorites</NavItem>
+        <NavItem icon={BsGearFill} onClick={integrations.onToggle}>
+          Account Settings
           <Icon
             as={MdKeyboardArrowRight}
             ml='auto'
@@ -99,17 +103,12 @@ export default function App() {
         </NavItem>
         <Collapse in={integrations.isOpen}>
           <NavItem pl='12' py='2'>
-            Shopify
+            Payment
           </NavItem>
           <NavItem pl='12' py='2'>
-            Slack
-          </NavItem>
-          <NavItem pl='12' py='2'>
-            Zapier
+            Log Out
           </NavItem>
         </Collapse>
-        <NavItem icon={AiFillGift}>Changelog</NavItem>
-        <NavItem icon={BsGearFill}>Settings</NavItem>
       </Flex>
     </Box>
   );
@@ -132,8 +131,18 @@ export default function App() {
       </Drawer>
       <Box ml={{ base: 0, md: 60 }} transition='.3s ease'>
         <Box as='main' p='4'>
-          {/* Add content here, remove div below  */}
-          <Box borderWidth='4px' borderStyle='dashed' rounded='md' h='96' />
+          <Box
+            maxW='7xl'
+            mx='auto'
+            px={{ base: '4', md: '8', lg: '12' }}
+            py={{ base: '6', md: '8', lg: '12' }}
+          >
+            <ProductGrid>
+              {products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </ProductGrid>
+          </Box>
         </Box>
       </Box>
     </Box>
